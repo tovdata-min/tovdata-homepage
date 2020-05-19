@@ -42,6 +42,7 @@ body {
 .page-header .main-title {
     font-size: 48px;
     font-weight: 300;
+    padding-top: 40px;
 }
 .page-header .page-title {
     color: #514D7F;
@@ -313,7 +314,7 @@ body {
     margin-top: 20px !important;
 }
 .m-t-xl {
-    margin-top: 25px !important;
+    margin-top: 30px !important;
 }
 .m-r-xs {
     margin-right: 5px !important;
@@ -328,7 +329,7 @@ body {
     margin-right: 20px !important;
 }
 .m-r-xl {
-    margin-right: 25px !important;
+    margin-right: 30px !important;
 }
 .m-b-xs {
     margin-bottom: 5px !important;
@@ -343,7 +344,10 @@ body {
     margin-bottom: 20px !important;
 }
 .m-b-xl {
-    margin-bottom: 25px !important;
+    margin-bottom: 30px !important;
+}
+.m-b-xxl {
+    margin-bottom: 40px !important;
 }
 .m-l-xs {
     margin-left: 5px !important;
@@ -358,7 +362,7 @@ body {
     margin-left: 20px !important;
 }
 .m-l-xl {
-    margin-left: 25px !important;
+    margin-left: 30px !important;
 }
 
 /* Responsive Component */
@@ -374,6 +378,9 @@ body {
     .page-sub-title {
         text-align: center;
     }
+    .main-title {
+        padding-top: 45px;
+    }
     .navbar-brand {
         margin-left: 10px;
     }
@@ -386,10 +393,13 @@ body {
         height: auto !important;
         margin: 0 10px 40px 10px !important;
     }
+    .ibox-card .form-image {
+        margin-bottom: 0 !important;
+    }
     .member-card {
         margin: 0 15px 30px 10px !important;
     }
-    .contract-area {
+    .contact-area {
         align-items: flex-start !important;
         justify-content: center !important;
         height: 100%;

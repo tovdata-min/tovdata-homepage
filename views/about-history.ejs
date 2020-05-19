@@ -111,45 +111,6 @@
                 background-color: #C1BCEF;
             }
         }
-
-        .contract-zone {
-            position: relative;
-            height: 410px;
-        }
-        .contract-zone .form-map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 410px;
-            width: 100%;
-        }
-        .contract-area {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-        }
-        .contract-box {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.15), 0 3px 5px rgba(100, 100, 100, 0.3);
-            padding: 20px 25px;
-            z-index: 500;
-        }
-        .contract-box .contract-box-title {
-            margin-bottom: 17px;
-        }
-        .contract-box .contract-label {
-            font-size: 14px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
     </style>
 </head>
 <body>
@@ -160,14 +121,14 @@
             <div class="main-nav" id="mainNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown active"><a class="nav-link" href="">About</a>
+                    <li class="nav-item dropdown active"><a class="nav-link" href="/about">About</a>
                         <ul>
                           <li class="active"><a class="nav-link" href="/about/history">History</a></li>
                           <li><a class="nav-link" href="#">Join us</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contract">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home#mv-contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -214,5 +175,11 @@
     <!-- Public Function -->
     <script src="/javascripts/public-function.js"></script>
     <script>
+        // Footer
+        if (document.documentElement.clientHeight > document.body.clientHeight) {
+            document.querySelector('.page-footer').style = "position: absolute; bottom: 0; width: 100%;";
+        } else {
+            document.querySelector('.page-footer').style = "";
+        }
     </script>
 </body>
