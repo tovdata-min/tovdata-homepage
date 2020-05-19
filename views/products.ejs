@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<head>
+    <title>Tovdata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap 4.5.0 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="/stylesheets/leaflet.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/ionicons/css/ionicons.min.css">
+    <!-- Public css -->
+    <link rel="stylesheet" href="/stylesheets/public-style.css">
+    <!-- Custom -->
+    <style>
+        .prod-box {
+            box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.16);
+            margin-bottom: 40px;
+        }
+        .prod-box:last-child {
+            margin-bottom: 0;
+        }
+        .prod-box .prod-box-title {
+            padding: 25px 30px 18px 30px;
+        }
+        .prod-box-title h3,
+        .prod-box-title h4,
+        .prod-box-title h5 {
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        .prod-box-title small {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        .prod-box .prod-box-content {
+            padding: 0 0 25px 30px;
+        }
+        .prod-box .prod-box-content p {
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .prod-box .prod-box-content p:last-child {
+            margin-bottom: 0;
+        }
+        .prod-box .prod-box-content ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 8px;
+        }
+        .prod-box .prod-box-content li {
+            margin: 0;
+            padding: 0;
+        }
+        .prod-box .prod-box-content li > a {
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .prod-box .prod-box-content li > a > i {
+            font-size: 16px;
+            line-height: 0.5;
+            margin-right: 8px;
+        }
+        .prod-box .prod-img-l,
+        .prod-box .prod-img-r {
+            width: 100%;
+            height: 100%;
+        }
+        .prod-box .prod-img-l {
+            padding: 20px 0 20px 20px;
+        }
+        .prod-box .prod-img-r {
+            padding: 20px 20px 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .prod-box .prod-box-title,
+            .prod-box .prod-box-sub-title {
+                text-align: center;
+            }
+            .prod-box .prod-box-content {
+                padding: 0 20px;
+            }
+            .prod-box .prod-img-l,
+            .prod-box .prod-img-r {
+                padding: 0 20px 20px 20px;
+            }
+        }
+
+        .contract-zone {
+            position: relative;
+            height: 410px;
+        }
+        .contract-zone .form-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 410px;
+            width: 100%;
+        }
+        .contract-area {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        .contract-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.25), 0 3px 5px rgba(100, 100, 100, 0.4);
+            padding: 20px 25px;
+            z-index: 500;
+        }
+        .contract-box .contract-box-title {
+            margin-bottom: 17px;
+        }
+        .contract-box .contract-label {
+            font-size: 14px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+         #mv-map-1,
+         #mv-map-2,
+         #mv-map-3 {
+             cursor: pointer;
+         }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
+        <div class="container d-flex" style="justify-content: space-between;">
+            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
+            <div class="main-nav" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="/home">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="">About</a>
+                        <ul>
+                          <li><a class="nav-link" href="/about/history">History</a></li>
+                          <li><a class="nav-link" href="#">Join us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home#mv-contract">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header" id="intro">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <h2 class="page-title">Products</b></h2>
+                    <p class="page-sub-title">TOVDATA Solutions for Data Compliance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="wrapper-content">
+            <div class="container">
+
+                <div class="prod-box">
+                    <div class="row d-flex">
+                        <div class="col-md-8">
+                            <div class="prod-box-title">
+                                <h3>데이터 반출 관리시스템</h3>
+                                <small>dEMS (data Export Management System)</small>
+                            </div>
+                            <div class="prod-box-content">
+                                <p>개인정보가 포함된 데이터의 이용 및 반출을 위해서는 해당 이용 목적과 사용 기간에 대한 사용자의 동의가 필수적입니다. 토브데이터의 dEMS는 데이터 사용자의 요청을 바탕으로 데이터 관리자의 검토 승인을 거쳐 데이터 처리자가 목적과 기간에 부합하는 동의 여부와 유관 규제와 규정에 따른 가이드를 적용하고 적절한 수준의 비식별화(가명화 및 익명화)와 암호화 및 최종 검토 승인과정을 거쳐 안전하게 데이터를 반출하고, 이를 증명할 수 있는 보고서를 생성, 관리해주는 시스템입니다.</p>
+                                <p>데이터의 안전한 운영, 자체 활용 및 외부활용에 필요한 관리 프로세스로 데이터 요청자의 요청 내역 및 반출 내역, 데이터 관리자의 검토 및 승인사항, 데이터 처리자의 접근 및 처리 기록을 관리, 보고서 생성 등의 기능을 제공</p>
+                                <div>
+                                    <p style="font-weight: 400;">Key Features of dEMS</p>
+                                    <ul>
+                                        <li><a><i class="ion-ios-checkmark"></i>컴플라이언스 기반 데이터 반출 워크플로우 지원</a></li>
+                                        <li><a><i class="ion-ios-checkmark"></i>DPO의 자체 보고 및 규정준수 작업 지원</a></li>
+                                        <li><a><i class="ion-ios-checkmark"></i>최신 규정 및 권장 사항 주기적 업데이트 지원</a></li>
+                                        <li><a><i class="ion-ios-checkmark"></i>On-premise(kubernetes)에서 Cloud에 이르기까지의 규정 준수 환경 제공</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="prod-img-r">
+                                <img class="image-fullsize" src="/images/product/prod_1.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod-box">
+                    <div class="row d-flex">
+                        <div class="col-md-8">
+                            <div class="prod-box-title">
+                                <h3>동의 증명 서비스</h3>
+                                <small>BCA (Blockchain-based Consent Assurance)</small>
+                            </div>
+                            <div class="prod-box-content">
+                                <p>블록체인 기반의 사용자 동의 내역 증명서비스로써 회원가입 또는 서비스 이용 도중, 개인에 관한 정보를 포함하는 데이터의 수집 및 이용에 대해 사용자가 동의한 사항의 블록체인에 기록하여 안전하고 투명하게 보관하는 서비스입니다. 이를 통하여 기업은 향후 데이터 이용시 적법한 활용의 근거를 확보하고, 가입자들은 자신이 동의한 내역을 언제든 확인하고 수정 또는 철회를 요청할 수 있어, 이용 동의를 둘러싼 분쟁의 소지를 사전에 예방하고 안전하게 관리할 수 있게 합니다.</p>
+                                <div>
+                                    <p style="font-weight: 400;">데이터 활용 동의 사항 관리를 통한 동의 내역 증명</p>
+                                    <ul>
+                                        <li><a><i class="ion-ios-checkmark"></i>약관별 데이터 활용 목적, 기간, 대상을 포함하는 동의 사항 기록</a></li>
+                                        <li><a><i class="ion-ios-checkmark"></i>사용자 요청에 의한 동의 변경 및 철회 내역 기록</a></li>
+                                        <li><a><i class="ion-ios-checkmark"></i>약관 변경 시, 변경 사항 및 그에 따른 사용자 동의 이력 기록</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="prod-img-r">
+                                <img class="image-fullsize" src="/images/product/prod_4.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod-box">
+                    <div class="row d-flex">
+                        <div class="col-md-8">
+                            <div class="prod-box-title">
+                                <h3>재식별 위험도 평가 <strong style="color: orange; font-size: 16px; font-weight: 300;">(출시 예정)</strong></h3>
+                                <!-- <small>dEMS (data Export Management System)</small> -->
+                            </div>
+                            <div class="prod-box-content">
+                                <p>비식별화된 데이터의 반출 이력에 따른 재식별 가능성 평가 및 KLT 프라이버시 모델 기반 위험도 산출 <small><br/>* KLT 프라이버시 모델 : K-익명성, L-다양성, T-근접성</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="prod-img-r">
+                                <!-- <img class="image-fullsize" src="/images/product/prod_5.png" /> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+      
+        <div class="wrapper-content contract-zone" id="mv-contract">
+            <div class="form-map" id="map">
+                <div class="container-md contract-area">
+                    <div class="contract-box">
+                        <h3 class="contract-box-title" id="mv-map-1">Contract</h2>
+                        <div class="contract-box-content">
+                            <div class="m-b-sm">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-user-circle" style="width: 18px;"></i>
+                                </span>
+                                <label class="contract-label" id="mv-map-2">주식회사 토브데이터</label>
+                            </div>
+                            <div class="m-b-sm">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-map-o" style="width: 18px;"></i>
+                                </span>
+                                <label class="contract-label" id="mv-map-3">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
+                            </div>
+                            <div class="m-b-none">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-envelope-o " style="width: 18px;"></i>
+                                </span>
+                                <label class="contract-label">contract@tovdata.com</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
+    </div>
+    
+    <!-- jQuery 1.12.4 -->
+    <script src="/javascripts/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap 4.5.0 -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- Leaflet -->
+    <script src="/javascripts/leaflet.js"></script>
+    <!-- Mobile Nav -->
+    <script src="/javascripts/mobile-nav.js"></script>
+    <!-- Public Function -->
+    <script src="/javascripts/public-function.js"></script>
+    <script>
+        // Leaflet Map
+        const map = L.map('map', {
+            zoom: 16,
+            scrollWheelZoom: false,
+        });
+        setCenterMap();
+        // OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // Marker
+        const marker = L.icon({
+            iconUrl: 'images/map/map-marker.png',
+            iconSize: [23, 35],
+        });
+        L.marker([36.392,127.399], {icon: marker}).addTo(map).on('click', function() {
+            window.open('https://www.google.com/maps/place/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD+%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%9C%A0%EC%84%B1%EA%B5%AC+%EC%A0%84%EB%AF%BC%EB%8F%99+%EB%AC%B8%EC%A7%80%EB%A1%9C+193/@36.392067,127.398699,17z/data=!4m5!3m4!1s0x356549e5fde31e29:0x65bf2de7ed4fe983!8m2!3d36.3920674!4d127.3986991?hl=ko', "_blank");
+        });
+        // Click Event
+        document.querySelector('.contract-box #mv-map-1').addEventListener('click', function() {
+            setCenterMap();
+        });
+        document.querySelector('.contract-box #mv-map-2').addEventListener('click', function() {
+            setCenterMap();
+        });
+        document.querySelector('.contract-box #mv-map-3').addEventListener('click', function() {
+            setCenterMap();
+        });
+
+        window.onresize = function() {
+            setCenterMap();
+        }
+        // Set Center
+        function setCenterMap() {
+            if (document.body.clientWidth < 768) {
+                map.setView([36.3936, 127.399], 16);
+            } else {
+                map.setView([36.392, 127.404], 16);
+            }
+        }
+    </script>
+</body>

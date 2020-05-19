@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>
+    <title>Tovdata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap 4.5.0 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="/stylesheets/leaflet.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/ionicons/css/ionicons.min.css">
+    <!-- Public css -->
+    <link rel="stylesheet" href="/stylesheets/public-style.css">
+    <!-- Custom -->
+    <style>
+        .timeline {
+            width: 100%;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            margin-top: .425rem;
+            margin-right: -.5rem;
+            border: .0625rem solid #615C8F;
+            border-radius: 50%;
+        }
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -.1875rem;
+            width: .0625rem;
+            margin-top: 1.675rem;
+            margin-right: -.0325rem;
+            background-color: #C1BCEF;
+        }
+        .timeline-item:nth-child(odd) {
+            padding-right: 2.5rem;
+            padding-bottom: 2rem;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            text-align: left;
+        }
+        .timeline-item:nth-child(even)::before {
+            left: 0;
+            margin-left: -.5rem;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: 0;
+            background-color: #C1BCEF;
+        }
+        .timeline-item .timeline-date {
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+        .timeline-item .timeline-item-content {
+            font-size: 15px;
+            font-weight: 200;
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                padding: 0 15px;
+            }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 2.5rem;
+                padding-right: 0;
+                padding-bottom: 2rem;
+                text-align: left;
+            }
+            .timeline-item::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 16px;
+                height: 16px;
+                margin-top: .425rem;
+                margin-left: -.5rem;
+                border: .0625rem solid #615C8F;
+                border-radius: 50%;
+            }
+            .timeline-item:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: -.1875rem;
+                width: .0625rem;
+                margin-top: 1.675rem;
+                margin-left: -.0325rem;
+                background-color: #C1BCEF;
+            }
+        }
+
+        .contract-zone {
+            position: relative;
+            height: 410px;
+        }
+        .contract-zone .form-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 410px;
+            width: 100%;
+        }
+        .contract-area {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        .contract-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.15), 0 3px 5px rgba(100, 100, 100, 0.3);
+            padding: 20px 25px;
+            z-index: 500;
+        }
+        .contract-box .contract-box-title {
+            margin-bottom: 17px;
+        }
+        .contract-box .contract-label {
+            font-size: 14px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+         #mv-map-1,
+         #mv-map-2,
+         #mv-map-3 {
+             cursor: pointer;
+         }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
+        <div class="container d-flex" style="justify-content: space-between;">
+            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
+            <div class="main-nav" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                    <li class="nav-item dropdown active"><a class="nav-link" href="">About</a>
+                        <ul>
+                          <li class="active"><a class="nav-link" href="/about/history">History</a></li>
+                          <li><a class="nav-link" href="#">Join us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home#mv-contract">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header" id="intro">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <h2 class="page-title">History</b></h2>
+                    <!-- <p class="page-sub-title">TOVDATA Solutions for Data Compliance</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="wrapper-content">
+            <div class="container">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="timeline-date">Mar 2020</h3>
+                        <p class="timeline-item-content">Angel 투자 유치 by 피아몬드 주식회사</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="timeline-date">Apr 2020</h3>
+                        <p class="timeline-item-content">TOVDATA 설립</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
+    </div>
+    
+    <!-- jQuery 1.12.4 -->
+    <script src="/javascripts/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap 4.5.0 -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- Leaflet -->
+    <script src="/javascripts/leaflet.js"></script>
+    <!-- Mobile Nav -->
+    <script src="/javascripts/mobile-nav.js"></script>
+    <!-- Public Function -->
+    <script src="/javascripts/public-function.js"></script>
+    <script>
+    </script>
+</body>
