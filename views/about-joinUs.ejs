@@ -77,24 +77,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
-        <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
-            <div class="main-nav" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown active"><a class="nav-link" href="/about">About</a>
-                        <ul>
-                          <li class="active"><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="/about/join">Join us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <%- include ('./nav') %>
 
     <div class="page-header" id="intro">
         <div class="container">
@@ -161,7 +144,7 @@
             </div>
         </div>
     </div>
-    <div class="page-footer">
+    <div class="page-footer" style="background-color: #ffffff;">
         <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
     </div>
     
@@ -180,7 +163,7 @@
         if (document.documentElement.clientHeight > document.body.clientHeight) {
             document.querySelector('.page-footer').style = "position: absolute; bottom: 0; width: 100%;";
         } else {
-            document.querySelector('.page-footer').style = "";
+            document.querySelector('.page-footer').style = "background-color: #ffffff;";
         }
     </script>
 </body>

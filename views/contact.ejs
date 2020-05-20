@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+    <title>Tovdata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap 4.5.0 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="/stylesheets/leaflet.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/ionicons/css/ionicons.min.css">
+    <!-- Public css -->
+    <link rel="stylesheet" href="/stylesheets/public-style.css">
+    <!-- Custom -->
+    <style>
+        .contact-zone {
+            position: relative;
+        }
+        .contact-zone .form-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .contact-area {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        .contact-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.25), 0 3px 5px rgba(100, 100, 100, 0.4);
+            padding: 20px 25px;
+            z-index: 500;
+        }
+        .contact-box .contact-box-title {
+            margin-bottom: 17px;
+        }
+        .contact-box .contact-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+        #mv-map-1,
+        #mv-map-2 {
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .contact-area {
+                align-items: flex-start !important;
+                justify-content: center !important;
+                height: 100%;
+                margin-top: 20px;
+            }
+            .contact-box .contact-box-title {
+                margin-bottom: 12px;
+            }
+            .contact-box .contact-label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include ('./nav') %>
+
+    <div class="page-header" id="intro">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <h2 class="page-title">Contact</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="wrapper-content contact-zone">
+            <div class="form-map" id="map">
+                <div class="container-md contact-area">
+                    <div class="contact-box">
+                        <h3 class="contact-box-title">contact</h2>
+                        <div class="contact-box-content">
+                            <div class="m-b-sm">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-user-circle" style="width: 18px;"></i>
+                                </span>
+                                <label class="contact-label" id="mv-map-1">주식회사 토브데이터</label>
+                            </div>
+                            <div class="m-b-sm">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-map-o" style="width: 18px;"></i>
+                                </span>
+                                <label class="contact-label" id="mv-map-2">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
+                            </div>
+                            <div class="m-b-none">
+                                <span class="m-r-sm" style="width: 20px; text-align: center;">
+                                    <i class="fa fa-envelope-o " style="width: 18px;"></i>
+                                </span>
+                                <label class="contact-label">contact@tovdata.com</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
+    </div>
+    
+    <!-- jQuery 1.12.4 -->
+    <script src="/javascripts/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap 4.5.0 -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- Leaflet -->
+    <script src="/javascripts/leaflet.js"></script>
+    <!-- Mobile Nav -->
+    <script src="/javascripts/mobile-nav.js"></script>
+    <!-- Public Function -->
+    <script src="/javascripts/public-function.js"></script>
+    <script>
+        // Set body height
+        const clientHeight = window.innerHeight;
+        const mapHeight = clientHeight - (document.getElementById('nav-main').clientHeight + document.querySelector('.page-header').clientHeight + document.querySelector('.page-footer').clientHeight) - 1;
+        console.log(mapHeight);
+        document.getElementsByClassName('contact-zone')[0].style.height = mapHeight + "px";
+        document.getElementById('map').style.height = mapHeight + "px";
+
+        // Leaflet Map
+        const map = L.map('map', {
+            zoom: 16,
+            scrollWheelZoom: false,
+        });
+        setCenterMap();
+        // OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // Marker
+        const marker = L.icon({
+            iconUrl: 'images/map/map-marker.png',
+            iconSize: [23, 35],
+        });
+        L.marker([36.392,127.399], {icon: marker}).addTo(map).on('click', function() {
+            window.open('https://www.google.com/maps/place/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD+%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%9C%A0%EC%84%B1%EA%B5%AC+%EC%A0%84%EB%AF%BC%EB%8F%99+%EB%AC%B8%EC%A7%80%EB%A1%9C+193/@36.392067,127.398699,17z/data=!4m5!3m4!1s0x356549e5fde31e29:0x65bf2de7ed4fe983!8m2!3d36.3920674!4d127.3986991?hl=ko', "_blank");
+        });
+        // Click Event
+        document.querySelector('.contact-box #mv-map-1').addEventListener('click', function() {
+            setCenterMap();
+        });
+        document.querySelector('.contact-box #mv-map-2').addEventListener('click', function() {
+            setCenterMap();
+        });
+
+        window.onresize = function() {
+            setCenterMap();
+        }
+        // Set Center
+        function setCenterMap() {
+            if (document.body.clientWidth < 768) {
+                map.setView([36.399, 127.399], 14);
+            } else {
+                map.setView([36.392, 127.404], 16);
+            }
+        }
+    </script>
+</body>

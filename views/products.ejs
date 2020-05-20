@@ -91,67 +91,11 @@
                 padding: 0 20px 20px 20px;
             }
         }
-
-        .contact-zone {
-            position: relative;
-            height: 410px;
-        }
-        .contact-zone .form-map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 410px;
-            width: 100%;
-        }
-        .contact-area {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-        }
-        .contact-box {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.25), 0 3px 5px rgba(100, 100, 100, 0.4);
-            padding: 20px 25px;
-            z-index: 500;
-        }
-        .contact-box .contact-box-title {
-            margin-bottom: 17px;
-        }
-        .contact-box .contact-label {
-            font-size: 14px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
-        <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
-            <div class="main-nav" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link" href="/about">About</a>
-                        <ul>
-                          <li><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="/about/join">Join us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <%- include ('./nav') %>
 
     <div class="page-header" id="intro">
         <div class="container">
@@ -242,41 +186,10 @@
                     </div>
                 </div>
 
-
-            </div>
-        </div>
-      
-        <div class="wrapper-content contact-zone" id="mv-contact">
-            <div class="form-map" id="map">
-                <div class="container-md contact-area">
-                    <div class="contact-box">
-                        <h3 class="contact-box-title" id="mv-map-1">contact</h2>
-                        <div class="contact-box-content">
-                            <div class="m-b-sm">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-user-circle" style="width: 18px;"></i>
-                                </span>
-                                <label class="contact-label" id="mv-map-2">주식회사 토브데이터</label>
-                            </div>
-                            <div class="m-b-sm">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-map-o" style="width: 18px;"></i>
-                                </span>
-                                <label class="contact-label" id="mv-map-3">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
-                            </div>
-                            <div class="m-b-none">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-envelope-o " style="width: 18px;"></i>
-                                </span>
-                                <label class="contact-label">contact@tovdata.com</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="page-footer">
+    <div class="page-footer" style="background-color: #ffffff;">
         <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
     </div>
     

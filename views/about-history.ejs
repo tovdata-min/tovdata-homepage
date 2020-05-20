@@ -115,24 +115,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
-        <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
-            <div class="main-nav" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown active"><a class="nav-link" href="/about">About</a>
-                        <ul>
-                          <li class="active"><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="#">Join us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <%- include ('./nav') %>
 
     <div class="page-header" id="intro">
         <div class="container">

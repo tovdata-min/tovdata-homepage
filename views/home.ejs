@@ -151,13 +151,13 @@
 
         .contact-zone {
             position: relative;
-            height: 410px;
+            height: 420px;
         }
         .contact-zone .form-map {
             position: absolute;
             top: 0;
             left: 0;
-            height: 410px;
+            height: 420px;
             width: 100%;
         }
         .contact-area {
@@ -177,27 +177,43 @@
             margin-bottom: 17px;
         }
         .contact-box .contact-label {
-            font-size: 14px;
+            display: inline-block;
+            font-size: 13px;
             font-weight: 200;
             margin-bottom: 0;
         }
+        #mv-map-1,
+        #mv-map-2 {
+            cursor: pointer;
+        }
 
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
+        @media (max-width: 768px) {
+            .contact-area {
+                align-items: flex-start !important;
+                justify-content: center !important;
+                height: 100%;
+                margin-top: 20px;
+            }
+            .contact-box .contact-box-title {
+                margin-bottom: 12px;
+            }
+            .contact-box .contact-label {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
+    <%- include ('./nav') %>
+    <!-- <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
         <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
+            <a class="navbar-brand" href="/home">Tovdata</a>
             <div class="main-nav" id="mainNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link" href="/about">About</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/about">About</a>
                         <ul>
                           <li><a class="nav-link" href="/about/history">History</a></li>
                           <li><a class="nav-link" href="/about/join">Join us</a></li>
@@ -210,7 +226,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <div class="page-header" id="intro">
         <div class="container">
@@ -280,8 +296,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row d-flex">
-                            <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                                 <div class="ibox-card">
                                     <div class="form-icon">
                                         <div class="icon-area" style="background-color: #fff0da;">
@@ -290,38 +305,7 @@
                                     </div>
                                     <small class="icon-desc">데이터 반출 절차 지원 및<br/>데이터 활용성 증가</small>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #e6fdfc;">
-                                            <i class="ion-ios-search" style="color: #3fcdc7; font-size: 36px;"></i>
-                                        </div>
-                                    </div>
-                                    <small class=icon-desc>규제 준수 여부 증명으로 인한<br/>법적 RISK 관리</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #eafde7;">
-                                            <i class="ion-ios-pulse" style="color: #41cf2e; font-size: 36px;"></i>
-                                        </div>
-                                    </div>
-                                    <small class="icon-desc">적법한 데이터 이용,<br/>프로세스 제공</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #ecebff;">
-                                            <i class="ion-ios-trending-down" style="color: #8660fe; font-size: 36px;"></i>
-                                        </div>
-                                    </div>
-                                    <small class="icon-desc">법적, 시스템적 전문성에 대한<br/>부담 경감 및 비용 절감</small>
-                                </div>
-                            </div>
-                        </div> -->
+                            </div> -->
                     </div>
                 </div>
             </div>
@@ -369,65 +353,6 @@
                         </div>
                         <div class="col-md-3 d-flex" style="align-items: center; justify-content: center;">
                             <a id="btn-more" href="/products">More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-content bg-sub" id="mv-team">
-            <div class="container">
-                <div class="desc-box">
-                    <div class="desc-box-title">
-                        <h2>Team</h2>
-                    </div>
-                    <div class="row desc-box-content d-flex">
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(hyojin_park).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>hjpark@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Hyojin Park</h5>
-                                    <span>CEO/Compliance Expert</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(sungkwan_jung).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>skjung@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Sungkwan Jung</h5>
-                                    <span>CTO/Solution Architecture</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(suzy_jeon).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>suzy@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Suzy Jeon</h5>
-                                    <span>Head of Marketing</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
