@@ -2,6 +2,9 @@
 <head>
     <title>Tovdata</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/icon/favicon.png">
+    <link rel="icon" href="/images/icon/favicon.png">
     
     <!-- Bootstrap 4.5.0 -->
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
@@ -30,6 +33,16 @@
         .desc-box-title .desc-box-sub-title {
             font-size: 0.82rem; 
             font-weight: 200;
+        }
+
+        #catchphrase {
+            display: flex;
+            flex-direction: column;
+        }
+        #catchphrase span {
+            font-size: 57px;
+            font-weight: 300;
+            letter-spacing: 5px;
         }
 
         .ibox-card {
@@ -248,8 +261,13 @@
                         <h2>About</h2>
                         <!-- <small>TOVDATA Value proposition</small> -->
                     </div>
-                    <div class="row desc-box-content d-flex">
-                        
+                    <div class="desc-box-content flex-w-center">
+                        <div class="col-md-6" id="catchphrase">
+                            <span><b>T</b>rust</span>
+                            <span><b>O</b>pportunity</span>
+                            <span><b>V</b>alue</span>
+                            <span>Data</span>
+                        </div>
                     </div>
                 </div>
             </div>

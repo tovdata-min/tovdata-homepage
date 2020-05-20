@@ -64,9 +64,11 @@ body {
 
 /* Flex Layout */
 .flex-h-center {
+    display: flex;
     align-items: center;
 }
 .flex-w-center {
+    display: flex;
     justify-content: center;
 }
 
