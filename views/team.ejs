@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/stylesheets/public-style.css">
     <!-- Custom -->
     <style>
-        .member-card {
+        /* .member-card {
             border-radius: 10px;
             box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
             cursor: pointer;
@@ -65,6 +65,56 @@
             font-size: 13px;
             font-weight: 400;
             color: #aaaaaa;
+        } */
+        .member-card {
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
+            cursor: pointer;
+            margin: 0 15px;
+        }
+        .member-card .member-info {
+            background-color: #FFFFFF;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 25px 15px 20px 15px;
+            text-align: center;
+        }
+        .member-card .member-info h5 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #222222;
+        }
+        .member-card .member-info span {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            color: #AAAAAA;
+        }
+        .member-card .hr-member-info-dashed {
+            margin: 0 30px;
+            border-top: 1px dashed #CDCDCD;
+        }
+        .member-card .member-career {
+            background-color: #FFFFFF;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 20px 15px 25px 15px;
+        }
+        .member-card .member-career p {
+            color: #656565;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            padding: 0 30px;
+        }
+        .member-card .member-career p > i {
+            float: left;
+            margin-right: 8px;
+        }
+        .member-card .member-career .career-label {
+            display: block;
+            margin-left: 19px;
         }
 
         .sg-card {
@@ -104,10 +154,52 @@
             <div class="container">
                 <div class="form-b">
                     <div class="form-b-title">
-                        <h3>member</h3>
+                        <h3>Members</h3>
                     </div>
                     <div class="form-b-content flex-w-center">
                         <div class="col-md-4">
+                            <div class="member-card">
+                                <div class="member-info">
+                                    <h5>Hyojin Park</h5>
+                                    <span>CEO / Compliance Export</span>
+                                </div>
+                                <div class="hr-member-info-dashed"></div>
+                                <div class="member-career">
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">IoT Research Development Award Winner of Ministry of Science and ICT</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Technology Commercialization Competition Award Winner of Na-tional Research Foundation of Ko-rea President</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="member-card">
+                                <div class="member-info">
+                                    <h5>Sungkwan Jung</h5>
+                                    <span>CEO / Compliance Export</span>
+                                </div>
+                                <div class="hr-member-info-dashed"></div>
+                                <div class="member-career">
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Team Leader and Founding Member(@KAIST ITC, 12yr)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Research professor(@KAIST ITC)</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="member-card">
+                                <div class="member-info">
+                                    <h5>Suzy Jeon</h5>
+                                    <span>Head of Marketing & Account</span>
+                                </div>
+                                <div class="hr-member-info-dashed"></div>
+                                <div class="member-career">
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Team Leader and Founding Member(@KAIST ITC, 12yr)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Research professor(@KAIST ITC)</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-4">
                             <div class="member-card">
                                 <div class="member-img">
                                     <img class="image-w-max" src="images/team/member(hyojin_park).png" />
@@ -154,7 +246,7 @@
                                     <span>Head of Marketing</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

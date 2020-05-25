@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="/stylesheets/public-style.css">
     <!-- Custom -->
     <style>
+        body {
+            word-break: keep-all;
+        }
         .desc-box-title {
             text-align: center;
             margin-bottom: 50px;
@@ -78,6 +81,13 @@
             height: 60px;
             justify-content: center;
             width: 60px;
+        }
+        .icon-name {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
         }
         .icon-desc {
             display: block;
@@ -257,16 +267,19 @@
         <div class="wrapper-content">
             <div class="container">
                 <div class="desc-box">
-                    <div class="desc-box-title">
-                        <h2>About</h2>
+                    <!-- <div class="desc-box-title"> -->
+                        <!-- <h2>About</h2> -->
                         <!-- <small>TOVDATA Value proposition</small> -->
-                    </div>
-                    <div class="desc-box-content flex-w-center">
-                        <div class="col-md-6" id="catchphrase">
-                            <span><b>T</b>rust</span>
-                            <span><b>O</b>pportunity</span>
-                            <span><b>V</b>alue</span>
-                            <span>Data</span>
+                    <!-- </div> -->
+                    <div class="row desc-box-content flex-w-center">
+                        <div class="col-lg-5" id="catchphrase">
+                            <span><b style="font-weight: 800;">T</b>rust</span>
+                            <span><b style="font-weight: 800;">O</b>pportunity</span>
+                            <span><b style="font-weight: 800;">V</b>alue</span>
+                            <span style="font-weight: 800;">Data</span>
+                        </div>
+                        <div class="col-lg-7">
+                            <p style="font-size: 17px; font-weight: 200; line-height: 1.6;">토브데이터는 <strong style="color: #6048C2; font-size: 19px; font-weight: 700;">"데이터가 신뢰를 주고, 기회를 가져오며, 가치를 창출"</strong> 한다고 믿습니다. <br> 저희는 고객사가 보유한 데이터를 바탕으로 <b>신뢰를 얻고, 기회를 맞이하여 가치 있는 결과를 창출할 수 있도록 최선의 솔루션을 제공</b>하겠습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -276,54 +289,58 @@
             <div class="container">
                 <div class="desc-box">
                     <div class="desc-box-title">
-                        <h2>Services</h2>
-                        <small class="desc-box-sub-title">TOVDATA Value proposition</small>
+                        <h2>Value Proposition</h2>
+                        <!-- <small class="desc-box-sub-title">TOVDATA Value proposition</small> -->
                     </div>
                     <div class="desc-box-content">
-                        <div class="row d-flex m-b-xl">
-                            <div class="col-md-3">
+                        <div class="row d-flex multi-line" style="justify-content: center;">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
-                                    <div class="form-image">
-                                        <img class="s-image image-w-100" src="/images/home/main_1.png" />
+                                    <div class="form-icon">
+                                        <div class="icon-area" style="background-color: #fff0DA;">
+                                            <i class="ion-ios-analytics m-t-xs" style="color: #E98E06; font-size: 36px;"></i>
+                                        </div>
                                     </div>
-                                    <small class="image-desc">데이터 반출 절차 지원 및<br/>데이터 활용성 증가</small>
+                                    <small class="icon-name">데이터 반출 절차 지원 및 데이터 활용성 증가</small>
+                                    <small class="icon-desc">시스템의 플로우를 활용, 기업 내부 데이터 소유부서간의 의견 조율 및 신속한 결정 지원</small>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
-                                    <div class="form-image">
-                                        <img class="s-image image-w-100" src="/images/home/main_2.png" />
+                                    <div class="form-icon">
+                                        <div class="icon-area" style="background-color: #E6FCFC;">
+                                            <i class="ion-ios-search m-t-xs" style="color: #3FCDC7; font-size: 36px;"></i>
+                                        </div>
                                     </div>
-                                    <small class=image-desc>규제 준수 여부 증명으로 인한<br/>법적 RISK 관리</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-image">
-                                        <img class="s-image image-w-100" src="/images/home/main_3.png" />
-                                    </div>
-                                    <small class="image-desc">적법한 데이터 이용,<br/>프로세스 제공</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-image">
-                                        <img class="s-image image-w-100" src="/images/home/main_4.png" />
-                                    </div>
-                                    <small class="image-desc">법적, 시스템적 전문성에 대한<br/>부담 경감 및 비용 절감</small>
+                                    <small class="icon-name">규제 준수 여부 증명으로 인한 법적 RISK 관리</small>
+                                    <small class="icon-desc">데이터 활용에 따른 국내외 현지 규제 준수 여부 검토 및 리포팅 지원을 통한 위험 관리</small>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="col-md-3">
+                        <div class="row d-flex m-b-xl" style="justify-content: center;">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
                                     <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #fff0da;">
-                                            <i class="ion-ios-analytics" style="color: #e98e06; font-size: 36px;"></i>
+                                        <div class="icon-area" style="background-color: #EAFDE7;">
+                                            <i class="ion-ios-pulse m-t-xs" style="color: #41CF2F; font-size: 36px;"></i>
                                         </div>
                                     </div>
-                                    <small class="icon-desc">데이터 반출 절차 지원 및<br/>데이터 활용성 증가</small>
+                                    <small class="icon-name">적법한 데이터 이용 프로세스 제공</small>
+                                    <small class="icon-desc">사용자 동의 기반 개인정보 활용을 통한 적법한 개인정보의 활용 환경 제공</small>
                                 </div>
-                            </div> -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="ibox-card">
+                                    <div class="form-icon">
+                                        <div class="icon-area" style="background-color: #ECEBFF;">
+                                            <i class="ion-ios-trending-down m-t-xs" style="color: #8660FD; font-size: 36px;"></i>
+                                        </div>
+                                    </div>
+                                    <small class="icon-name">법적, 시스템적 전문성에 대한 부담 경감 및 비용 절감</small>
+                                    <small class="icon-desc">컴플라이언스 컨설팅을 통한 초기 데이터 활용 환경 도입시의 법적 및 시스템적 우려 해결</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
