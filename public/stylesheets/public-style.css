@@ -208,7 +208,7 @@ body {
     padding-right: 35px;
 }
 .mobile-nav .dropdown ul {
-    display: none;
+    /* display: none; */
     overflow: hidden;
 } 
 .mobile-nav .dropdown li {
