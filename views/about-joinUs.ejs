@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <title>TOVDATA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/icon/favicon.png">
+    <link rel="icon" href="/images/icon/favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168242582-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168242582-1', {'page_title': 'About/Join', 'page_path': "/about/join"});
+    </script>
+    
+    <!-- Bootstrap 4.5.0 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="/stylesheets/leaflet.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/ionicons/css/ionicons.min.css">
+    <!-- Public css -->
+    <link rel="stylesheet" href="/stylesheets/public-style.css">
+    <!-- Custom -->
+    <style>
+        .ibox {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            margin-bottom: 40px;
+        }
+        .ibox .ibox-title {
+            padding: 20px 30px;
+        }
+        .ibox .ibox-title h4,
+        .ibox .ibox-title h5 {
+            margin-bottom: 0;
+        }
+        .ibox .ibox-content {
+            padding: 0 30px 20px 30px;
+        }
+        .ibox-content p {
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        .ibox-content p:last-child {
+            margin-bottom: 0;
+        }
+        .ibox-content ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .ibox-content li {
+            margin-bottom: 12px;
+            padding: 0;
+        }
+        .ibox-content li:last-child {
+            margin-bottom: 0;
+        }
+        .ibox-content li > a {
+            display: block;
+            font-size: 15px;
+            font-weight: 300;
+        }
+        .ibox-content li > a > i {
+            margin-right: 8px;
+        }
+
+        .line-dashed-l {
+            border-left: 1px dashed rgba(0, 0, 0, 0.22);
+        }
+
+        @media (max-width: 768px) {
+            .ibox {
+                margin-bottom: 30px;
+            }
+            .line-dashed-l {
+                border-left: none;
+            }
+            .line-dashed-l .ibox-title {
+                border-top: 1px dashed rgba(0, 0, 0, 0.22);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include ('./nav') %>
+
+    <div class="page-header" id="intro">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <h2 class="page-title">Join Us</b></h2>
+                    <!-- <p class="page-sub-title">TOVDATA Solutions for Data Compliance</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="wrapper-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>TOVDATA 채용 공고</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <p>TOVDATA는 데이터에 신뢰, 기회, 그리고 가치를 더해주는 기업을 목표로 합니다.</p>
+                                <p>우리 토브데이터 주식회사는 대한민국을 넘어 북미 시장으로의 진출을 통해 데이터 컴플라이언스 시장에서의 선두주자가 되고자 합니다.</p>
+                                <p>데이터 시장에서의 전세계적인 변화의 흐름을 읽고, 기업의 규제준수 문제를 해결해줌으로써 데이터 활용의 새로운 길을 열어주는 일에 함께 하고자 하는 여러분의 지원을 기다립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ibox m-b-none">
+                            <div class="row d-flex">
+                                <div class="col-md-6">
+                                    <div class="ibox-title" style="text-align: center;">
+                                        <h5>채용 분야</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul>
+                                            <li><a><i class="fa fa-bookmark-o"></i>SW Engineer</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>Security Engineer</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 line-dashed-l">
+                                    <div class="ibox-title" style="text-align: center;">
+                                        <h5>자격 요건</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul>
+                                            <li><a><i class="fa fa-bookmark-o"></i>경력: 3년 이상 (스타트업 경력 우대)</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>학력: 학사 이상</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>급여: 경력에 따른 협의</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>고용형태: 정규직</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>근무지: 대전</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>모집기간: 수시 모집</a></li>
+                                            <li><a><i class="fa fa-bookmark-o"></i>지원방법: 상세 경력 기술한 이력서 & 포트폴리오 이메일 제출 (contact@tovdata.com)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer" style="background-color: #ffffff;">
+        <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
+    </div>
+    
+    <!-- jQuery 1.12.4 -->
+    <script src="/javascripts/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap 4.5.0 -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- Leaflet -->
+    <script src="/javascripts/leaflet.js"></script>
+    <!-- Mobile Nav -->
+    <script src="/javascripts/mobile-nav.js"></script>
+    <!-- Public Function -->
+    <script src="/javascripts/public-function.js"></script>
+    <script>
+        // Footer
+        if (document.documentElement.clientHeight > document.body.clientHeight) {
+            document.querySelector('.page-footer').style = "position: absolute; bottom: 0; width: 100%;";
+        } else {
+            document.querySelector('.page-footer').style = "background-color: #ffffff;";
+        }
+    </script>
+</body>

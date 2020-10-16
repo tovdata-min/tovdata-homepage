@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <head>
-    <title>Tovdata</title>
+    <title>TOVDATA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/icon/favicon.png">
+    <link rel="icon" href="/images/icon/favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168242582-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168242582-1', {'page_title': 'Home', 'page_path': "/home"});
+    </script>
     
     <!-- Bootstrap 4.5.0 -->
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
@@ -15,6 +28,17 @@
     <link rel="stylesheet" href="/stylesheets/public-style.css">
     <!-- Custom -->
     <style>
+        body {
+            word-break: keep-all;
+        }
+
+        .f-w-700 {
+            font-weight: 700;
+        }
+        .f-c-m {
+            color: #403A5E;
+        }
+
         .desc-box-title {
             text-align: center;
             margin-bottom: 50px;
@@ -32,6 +56,19 @@
             font-weight: 200;
         }
 
+        #catchphrase {
+            border-radius: 16px;
+            box-shadow: -1px 2px 6px rgba(84, 65, 117, 0.12) inset, 0 6px 15px rgba(100, 100, 100, 0.24);
+            display: inline-block;
+            padding: 25px 40px;
+        }
+        #catchphrase span {
+            display: block;
+            font-size: 57px;
+            font-weight: 300;
+            letter-spacing: 5px;
+        }
+
         .ibox-card {
             background-color: #ffffff;
             border-radius: 0.45rem;
@@ -44,6 +81,13 @@
         }
         .ibox-card:hover {
             transform: scale(1.1);
+        }
+        .ibox-card .form-image {
+            padding: 30px;
+        }
+        .ibox-card .image-desc {
+            display: block;
+            text-align: center;
         }
         .form-icon {
             align-items: center;
@@ -58,6 +102,13 @@
             height: 60px;
             justify-content: center;
             width: 60px;
+        }
+        .icon-name {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
         }
         .icon-desc {
             display: block;
@@ -142,74 +193,90 @@
             text-decoration: none;
         }
 
-        .contract-zone {
+        .contact-zone {
             position: relative;
-            height: 410px;
+            height: 420px;
         }
-        .contract-zone .form-map {
+        .contact-zone .form-map {
             position: absolute;
             top: 0;
             left: 0;
-            height: 410px;
+            height: 420px;
             width: 100%;
         }
-        .contract-area {
+        .contact-area {
             display: flex;
             align-items: center;
             justify-content: flex-end;
             height: 100%;
         }
-        .contract-box {
+        .contact-box {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 1px 2px rgba(100, 100, 100, 0.25), 0 3px 5px rgba(100, 100, 100, 0.4);
             padding: 20px 25px;
             z-index: 500;
         }
-        .contract-box .contract-box-title {
+        .contact-box .contact-box-title {
             margin-bottom: 17px;
         }
-        .contract-box .contract-label {
-            font-size: 14px;
+        .contact-box .contact-label {
+            display: inline-block;
+            font-size: 13px;
             font-weight: 200;
             margin-bottom: 0;
         }
+        #mv-map-1,
+        #mv-map-2 {
+            cursor: pointer;
+        }
 
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
+        @media (max-width: 768px) {
+            .contact-area {
+                align-items: flex-start !important;
+                justify-content: center !important;
+                height: 100%;
+                margin-top: 20px;
+            }
+            .contact-box .contact-box-title {
+                margin-bottom: 12px;
+            }
+            .contact-box .contact-label {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
+    <%- include ('./nav') %>
+    <!-- <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
         <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
+            <a class="navbar-brand" href="/home">Tovdata</a>
             <div class="main-nav" id="mainNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link" href="">About</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/about">About</a>
                         <ul>
                           <li><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="#">Join us</a></li>
+                          <li><a class="nav-link" href="/about/join">Join us</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#mv-services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#mv-products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#mv-team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mv-contract">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mv-contact">Contact</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <div class="page-header" id="intro">
         <div class="container">
             <div class="row d-flex">
                 <div class="col-lg-6 o-md-last">
-                    <h2 class="main-title">Build Trust, Opportunity, Value on your <b style="font-weight: 600;">Data</b></h2>
+                    <h2 class="main-title">Build <b class="f-w-700 f-c-m">T</b>rust, <b class="f-w-700 f-c-m">O</b>pportunity, <b class="f-w-700 f-c-m">V</b>alue on your <b class="f-w-700 f-c-m">Data</b></h2>
                 </div>
                 <div class="col-lg-6 o-md-first">
                     <img class="image-w-100" src="/images/home/intro.svg">
@@ -221,12 +288,25 @@
         <div class="wrapper-content">
             <div class="container">
                 <div class="desc-box">
-                    <div class="desc-box-title">
-                        <h2>About</h2>
+                    <!-- <div class="desc-box-title"> -->
+                        <!-- <h2>About</h2> -->
                         <!-- <small>TOVDATA Value proposition</small> -->
-                    </div>
-                    <div class="row desc-box-content d-flex">
-                        
+                    <!-- </div> -->
+                    <div class="row desc-box-content flex-w-center">
+                        <!-- <div class="col-lg-5 d-flex flex-w-center">
+                            <div id="catchphrase">
+                                <span><b style="color: #A582F5; font-weight: 800;">T</b>rust</span>
+                                <span><b style="color: #9F76F5; font-weight: 800;">O</b>pportunity</span>
+                                <span><b style="color: #9666F5; font-weight: 800;">V</b>alue</span>
+                                <span style="color: #8C55F5; font-weight: 800;">Data</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 d-flex" style="align-items: flex-end;">
+                            <p style="font-size: 17px; font-weight: 200; line-height: 2; margin-bottom: 0;">토브데이터는 <strong style="color: #35B897; font-size: 20px; font-weight: 700;">"데이터가 신뢰를 주고, 기회를 가져오며, 가치를 창출"</strong> 한다고 믿습니다. <br> 저희는 고객사가 보유한 데이터를 바탕으로 <b style="color: #A582F5; font-size: 18px; font-weight: 700;">신뢰</b>를 얻고, <b style="color: #9F76F5; font-size: 18px; font-weight: 700;">기회</b>를 맞이하여 <b style="color: #9666F5; font-size:18px; font-weight: 700;">가치 있는 결과</b>를 창출할 수 있도록 최선의 솔루션을 제공하겠습니다.</p>
+                        </div> -->
+                        <div class="col-lg-8 d-flex" style="text-align: center;">
+                            <p style="font-size: 17px; font-weight: 200; line-height: 2; margin-bottom: 0;">토브데이터는 <strong style="color: #35B897; font-size: 19px; font-weight: 700;">"데이터가 신뢰를 주고, 기회를 가져오며, 가치를 창출"</strong> 한다고 믿습니다. <br> 저희는 고객사가 보유한 데이터를 바탕으로 <b style="color: #A582F5; font-size: 18px; font-weight: 700;">신뢰</b>를 얻고, <b style="color: #9F76F5; font-size: 18px; font-weight: 700;">기회</b>를 맞이하여 <b style="color: #9666F5; font-size:18px; font-weight: 700;">가치 있는 결과</b>를 창출할 수 있도록 최선의 솔루션을 제공하겠습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,71 +315,55 @@
             <div class="container">
                 <div class="desc-box">
                     <div class="desc-box-title">
-                        <h2>Services</h2>
-                        <small class="desc-box-sub-title">TOVDATA Value proposition</small>
+                        <h2>Value Proposition</h2>
+                        <!-- <small class="desc-box-sub-title">TOVDATA Value proposition</small> -->
                     </div>
                     <div class="desc-box-content">
-                        <div class="row d-flex m-b-xl">
-                            <div class="col-md-3">
+                        <div class="row d-flex multi-line" style="justify-content: center;">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
-                                    <img class="image-w-100" src="/images/home/main_1.png" />
+                                    <div class="form-icon">
+                                        <div class="icon-area" style="background-color: #fff0DA;">
+                                            <i class="ion-ios-analytics m-t-xs" style="color: #E98E06; font-size: 36px;"></i>
+                                        </div>
+                                    </div>
+                                    <small class="icon-name">데이터 반출 절차 지원 및 데이터 활용성 증가</small>
+                                    <small class="icon-desc">시스템의 플로우를 활용, 기업 내부 데이터 소유부서간의 의견 조율 및 신속한 결정 지원</small>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
-                                    <img class="image-w-100" src="/images/home/main_2.png" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <img class="image-w-100" src="/images/home/main_3.png" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <img class="image-w-100" src="/images/home/main_4.png" />
+                                    <div class="form-icon">
+                                        <div class="icon-area" style="background-color: #E6FCFC;">
+                                            <i class="ion-ios-search m-t-xs" style="color: #3FCDC7; font-size: 36px;"></i>
+                                        </div>
+                                    </div>
+                                    <small class="icon-name">규제 준수 여부 증명으로 인한 법적 RISK 관리</small>
+                                    <small class="icon-desc">데이터 활용에 따른 국내외 현지 규제 준수 여부 검토 및 리포팅 지원을 통한 위험 관리</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="row d-flex">
-                            <div class="col-md-3">
+                        <div class="row d-flex m-b-xl" style="justify-content: center;">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
                                     <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #fff0da;">
-                                            <i class="ion-ios-analytics" style="color: #e98e06; font-size: 36px;"></i>
+                                        <div class="icon-area" style="background-color: #EAFDE7;">
+                                            <i class="ion-ios-pulse m-t-xs" style="color: #41CF2F; font-size: 36px;"></i>
                                         </div>
                                     </div>
-                                    <small class="icon-desc">데이터 반출 절차 지원 및<br/>데이터 활용성 증가</small>
+                                    <small class="icon-name">적법한 데이터 이용 프로세스 제공</small>
+                                    <small class="icon-desc">사용자 동의 기반 개인정보 활용을 통한 적법한 개인정보의 활용 환경 제공</small>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="ibox-card">
                                     <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #e6fdfc;">
-                                            <i class="ion-ios-search" style="color: #3fcdc7; font-size: 36px;"></i>
+                                        <div class="icon-area" style="background-color: #ECEBFF;">
+                                            <i class="ion-ios-trending-down m-t-xs" style="color: #8660FD; font-size: 36px;"></i>
                                         </div>
                                     </div>
-                                    <small class=icon-desc>규제 준수 여부 증명으로 인한<br/>법적 RISK 관리</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #eafde7;">
-                                            <i class="ion-ios-pulse" style="color: #41cf2e; font-size: 36px;"></i>
-                                        </div>
-                                    </div>
-                                    <small class="icon-desc">적법한 데이터 이용,<br/>프로세스 제공</small>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="ibox-card">
-                                    <div class="form-icon">
-                                        <div class="icon-area" style="background-color: #ecebff;">
-                                            <i class="ion-ios-trending-down" style="color: #8660fe; font-size: 36px;"></i>
-                                        </div>
-                                    </div>
-                                    <small class="icon-desc">법적, 시스템적 전문성에 대한<br/>부담 경감 및 비용 절감</small>
+                                    <small class="icon-name">법적, 시스템적 전문성에 대한 부담 경감 및 비용 절감</small>
+                                    <small class="icon-desc">컴플라이언스 컨설팅을 통한 초기 데이터 활용 환경 도입시의 법적 및 시스템적 우려 해결</small>
                                 </div>
                             </div>
                         </div>
@@ -344,7 +408,7 @@
                                         <i class="ion-ios-speedometer" style="color: #ff689b; font-size: 36px;"></i>
                                     </div>
                                 </div>
-                                <small class="prod-name">재식별 위험도 평가 <strong style="color: #787878; font-size: 12px; font-weight: 300;">(출시 예정)</strong></small>
+                                <small class="prod-name">재식별 위험도 평가<br/><strong style="color: #787878; font-size: 12px; font-weight: 300;">(출시 예정)</strong></small>
                                 <small class="prod-desc">비식별화된 데이터의 반출 이력에 따른 재식별 가능성 평가 및 KLT 프라이버시 모델 기반 위험도 산출</small>
                             </div>
                         </div>
@@ -355,88 +419,29 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper-content bg-sub" id="mv-team">
-            <div class="container">
-                <div class="desc-box">
-                    <div class="desc-box-title">
-                        <h2>Team</h2>
-                    </div>
-                    <div class="row desc-box-content d-flex">
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(hyojin_park).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>hjpark@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Hyojin Park</h5>
-                                    <span>CEO/Compliance Expert</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(sungkwan_jung).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>skjung@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Sungkwan Jung</h5>
-                                    <span>CTO/Solution Architecture</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/member/member(suzy_jeon).png">
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>suzy@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Suzy Jeon</h5>
-                                    <span>Head of Marketing</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-content bg-main contract-zone" id="mv-contract">
+        <div class="wrapper-content bg-main contact-zone" id="mv-contact">
             <div class="form-map" id="map">
-                <div class="container-md contract-area">
-                    <div class="contract-box">
-                        <h3 class="contract-box-title" id="mv-map-1">Contract</h2>
-                        <div class="contract-box-content">
+                <div class="container-md contact-area">
+                    <div class="contact-box">
+                        <h3 class="contact-box-title" id="mv-map-1">contact</h2>
+                        <div class="contact-box-content">
                             <div class="m-b-sm">
                                 <span class="m-r-sm" style="width: 20px; text-align: center;">
                                     <i class="fa fa-user-circle" style="width: 18px;"></i>
                                 </span>
-                                <label class="contract-label" id="mv-map-2">주식회사 토브데이터</label>
+                                <label class="contact-label" id="mv-map-2">주식회사 토브데이터</label>
                             </div>
                             <div class="m-b-sm">
                                 <span class="m-r-sm" style="width: 20px; text-align: center;">
                                     <i class="fa fa-map-o" style="width: 18px;"></i>
                                 </span>
-                                <label class="contract-label" id="mv-map-3">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
+                                <label class="contact-label" id="mv-map-3">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
                             </div>
                             <div class="m-b-none">
                                 <span class="m-r-sm" style="width: 20px; text-align: center;">
                                     <i class="fa fa-envelope-o " style="width: 18px;"></i>
                                 </span>
-                                <label class="contract-label">contract@tovdata.com</label>
+                                <label class="contact-label">contact@tovdata.com</label>
                             </div>
                         </div>
                     </div>
@@ -459,6 +464,13 @@
     <!-- Public Function -->
     <script src="/javascripts/public-function.js"></script>
     <script>
+        // Service Image
+        let imageWidth = 0;
+        document.querySelectorAll('.s-image').forEach(function(elem) {
+            imageWidth = elem.clientWidth;
+            $(elem).height(imageWidth);
+        });
+
         // Leaflet Map
         const map = L.map('map', {
             zoom: 16,
@@ -478,13 +490,13 @@
             window.open('https://www.google.com/maps/place/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD+%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%9C%A0%EC%84%B1%EA%B5%AC+%EC%A0%84%EB%AF%BC%EB%8F%99+%EB%AC%B8%EC%A7%80%EB%A1%9C+193/@36.392067,127.398699,17z/data=!4m5!3m4!1s0x356549e5fde31e29:0x65bf2de7ed4fe983!8m2!3d36.3920674!4d127.3986991?hl=ko', "_blank");
         });
         // Click Event
-        document.querySelector('.contract-box #mv-map-1').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-1').addEventListener('click', function() {
             setCenterMap();
         });
-        document.querySelector('.contract-box #mv-map-2').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-2').addEventListener('click', function() {
             setCenterMap();
         });
-        document.querySelector('.contract-box #mv-map-3').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-3').addEventListener('click', function() {
             setCenterMap();
         });
 
@@ -525,6 +537,19 @@
                     $('.mobile-nav-overly').fadeOut();
                 }
                 return false;
+            }
+        });
+
+        // resize 경우,
+        $(window).resize(function() {
+            console.log(imageWidth);
+            console.log(document.querySelector('.s-image').clientWidth);
+            // Service Image
+            if (imageWidth !== document.querySelectorAll('.s-image')[0].clientWidth) {
+                document.querySelectorAll('.s-image').forEach(function(elem) {
+                    imageWidth = elem.clientWidth;
+                    $(elem).height(imageWidth);
+                });
             }
         });
     </script>

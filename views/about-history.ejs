@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <head>
-    <title>Tovdata</title>
+    <title>TOVDATA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/icon/favicon.png">
+    <link rel="icon" href="/images/icon/favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168242582-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168242582-1', {'page_title': 'About/History', 'page_path': "/about/history"});
+    </script>
     
     <!-- Bootstrap 4.5.0 -->
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
@@ -72,6 +85,10 @@
         .timeline-item .timeline-item-content {
             font-size: 15px;
             font-weight: 200;
+            margin-bottom: 8px;
+        }
+        .timeline-item .timeline-item-content:last-child {
+            margin-bottom: 15px;
         }
 
         @media (max-width: 768px) {
@@ -111,67 +128,11 @@
                 background-color: #C1BCEF;
             }
         }
-
-        .contract-zone {
-            position: relative;
-            height: 410px;
-        }
-        .contract-zone .form-map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 410px;
-            width: 100%;
-        }
-        .contract-area {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-        }
-        .contract-box {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.15), 0 3px 5px rgba(100, 100, 100, 0.3);
-            padding: 20px 25px;
-            z-index: 500;
-        }
-        .contract-box .contract-box-title {
-            margin-bottom: 17px;
-        }
-        .contract-box .contract-label {
-            font-size: 14px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
-        <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
-            <div class="main-nav" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown active"><a class="nav-link" href="">About</a>
-                        <ul>
-                          <li class="active"><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="#">Join us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contract">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <%- include ('./nav') %>
 
     <div class="page-header" id="intro">
         <div class="container">
@@ -188,7 +149,8 @@
             <div class="container">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <h3 class="timeline-date">Mar 2020</h3>
+                        <h3 class="timeline-date">May 2020</h3>
+                        <p class="timeline-item-content">AWS Partnet Network 가입 - Registered Technical Partner</p>
                         <p class="timeline-item-content">Angel 투자 유치 by 피아몬드 주식회사</p>
                     </div>
                     <div class="timeline-item">
@@ -214,5 +176,11 @@
     <!-- Public Function -->
     <script src="/javascripts/public-function.js"></script>
     <script>
+        // Footer
+        if (document.documentElement.clientHeight > document.body.clientHeight) {
+            document.querySelector('.page-footer').style = "position: absolute; bottom: 0; width: 100%;";
+        } else {
+            document.querySelector('.page-footer').style = "";
+        }
     </script>
 </body>

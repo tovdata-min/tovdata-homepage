@@ -8,9 +8,3 @@ window.onscroll = function() {
         document.getElementById('nav-main').style.boxShadow = "none";
     }
 }
-// Footer
-if (window.innerHeight > document.body.clientHeight) {
-    document.querySelector('.page-footer').style = "position: absolute; bottom: 0; width: 100%;";
-} else {
-    document.querySelector('.page-footer').style = "";
-}

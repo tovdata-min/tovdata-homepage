@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
+    <div class="container d-flex" style="justify-content: space-between;">
+        <a class="navbar-brand" href="/home"><img src="/images/home/logo.png" height="32"></a>
+        <div class="main-nav" id="mainNav">
+            <% if (pageName !== undefined) { %>
+            <ul class="navbar-nav ml-auto">
+                <% if (pageName === "home") { %><li class="nav-item active"><% } else { %><li class="nav-item"><% } %>
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <% if (pageName.indexOf("about") !== -1) { %><li class="nav-item dropdown active"><% } else { %><li class="nav-item dropdown"><% } %>
+                    <a class="nav-link" href="/about">About</a>
+                    <ul>
+                        <% if (pageName.indexOf("about") !== -1 && pageName.split('-')[1] !== undefined && pageName.split('about')[1] === "history") { %><li class="active"><% } else { %><li><% } %>
+                            <a class="nav-link" href="/about/history">History</a>
+                        </li>
+                        <% if (pageName.indexOf("about") !== -1 && pageName.split('-')[1] !== undefined && pageName.split('about')[1] === "join") { %><li class="active"><% } else { %><li><% } %>
+                            <a class="nav-link" href="/about/join">Join us</a>
+                        </li>
+                    </ul>
+                </li>
+                <% if (pageName === "products") { %><li class="nav-item active"><% } else { %><li class="nav-item"><% } %>
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <% if (pageName === "team") { %><li class="nav-item active"><% } else { %><li class="nav-item"><% } %>
+                    <a class="nav-link" href="/team">Team</a>
+                </li>
+                <% if (pageName === "contact") { %><li class="nav-item active"><% } else { %><li class="nav-item"><% } %>
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            <% } else { %>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/about">About</a>
+                    <ul>
+                        <li><a class="nav-link" href="/about/history">History</a></li>
+                        <li><a class="nav-link" href="/about/join">Join us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                <li class="nav-item"><li class="nav-item"><a class="nav-link" href="/team">Team</a></li>
+                <li class="nav-item"><li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
+            <% } %>
+        </div>
+    </div>
+</nav>

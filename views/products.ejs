@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <head>
-    <title>Tovdata</title>
+    <title>TOVDATA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/icon/favicon.png">
+    <link rel="icon" href="/images/icon/favicon.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168242582-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168242582-1', {'page_title': 'Products', 'page_path': "/products"});
+    </script>
     
     <!-- Bootstrap 4.5.0 -->
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
@@ -91,67 +104,11 @@
                 padding: 0 20px 20px 20px;
             }
         }
-
-        .contract-zone {
-            position: relative;
-            height: 410px;
-        }
-        .contract-zone .form-map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 410px;
-            width: 100%;
-        }
-        .contract-area {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-        }
-        .contract-box {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 1px 2px rgba(100, 100, 100, 0.25), 0 3px 5px rgba(100, 100, 100, 0.4);
-            padding: 20px 25px;
-            z-index: 500;
-        }
-        .contract-box .contract-box-title {
-            margin-bottom: 17px;
-        }
-        .contract-box .contract-label {
-            font-size: 14px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-
-         #mv-map-1,
-         #mv-map-2,
-         #mv-map-3 {
-             cursor: pointer;
-         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav-main" style="background-color: #f5f8fd; padding: 10px;">
-        <div class="container d-flex" style="justify-content: space-between;">
-            <a class="navbar-brand" href="/home"><!-- <img src=""> -->Tovdata</a>
-            <div class="main-nav" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link" href="">About</a>
-                        <ul>
-                          <li><a class="nav-link" href="/about/history">History</a></li>
-                          <li><a class="nav-link" href="#">Join us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home#mv-contract">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <%- include ('./nav') %>
 
     <div class="page-header" id="intro">
         <div class="container">
@@ -173,6 +130,7 @@
                             <div class="prod-box-title">
                                 <h3>데이터 반출 관리시스템</h3>
                                 <small>dEMS (data Export Management System)</small>
+                                <small style="color: #535FA6; font-weight: 700; margin-top: 7px;">개인정보를 포함한 데이터의 반출 시 "적법한 개인정보 활용"을 지원하는 솔루션</small>
                             </div>
                             <div class="prod-box-content">
                                 <p>개인정보가 포함된 데이터의 이용 및 반출을 위해서는 해당 이용 목적과 사용 기간에 대한 사용자의 동의가 필수적입니다. 토브데이터의 dEMS는 데이터 사용자의 요청을 바탕으로 데이터 관리자의 검토 승인을 거쳐 데이터 처리자가 목적과 기간에 부합하는 동의 여부와 유관 규제와 규정에 따른 가이드를 적용하고 적절한 수준의 비식별화(가명화 및 익명화)와 암호화 및 최종 검토 승인과정을 거쳐 안전하게 데이터를 반출하고, 이를 증명할 수 있는 보고서를 생성, 관리해주는 시스템입니다.</p>
@@ -202,9 +160,10 @@
                             <div class="prod-box-title">
                                 <h3>동의 증명 서비스</h3>
                                 <small>BCA (Blockchain-based Consent Assurance)</small>
+                                <small style="color: #535FA6; font-weight: 700; margin-top: 7px;">블록체인 기반의 사용자 동의 내역 증명서비스</small>
                             </div>
                             <div class="prod-box-content">
-                                <p>블록체인 기반의 사용자 동의 내역 증명서비스로써 회원가입 또는 서비스 이용 도중, 개인에 관한 정보를 포함하는 데이터의 수집 및 이용에 대해 사용자가 동의한 사항의 블록체인에 기록하여 안전하고 투명하게 보관하는 서비스입니다. 이를 통하여 기업은 향후 데이터 이용시 적법한 활용의 근거를 확보하고, 가입자들은 자신이 동의한 내역을 언제든 확인하고 수정 또는 철회를 요청할 수 있어, 이용 동의를 둘러싼 분쟁의 소지를 사전에 예방하고 안전하게 관리할 수 있게 합니다.</p>
+                                <p>회원가입 또는 서비스 이용 도중, 개인에 관한 정보를 포함하는 데이터의 수집 및 이용에 대해 사용자가 동의한 사항의 블록체인에 기록하여 안전하고 투명하게 보관하는 서비스입니다. 이를 통하여 기업은 향후 데이터 이용시 적법한 활용의 근거를 확보하고, 가입자들은 자신이 동의한 내역을 언제든 확인하고 수정 또는 철회를 요청할 수 있어, 이용 동의를 둘러싼 분쟁의 소지를 사전에 예방하고 안전하게 관리할 수 있게 합니다.</p>
                                 <div>
                                     <p style="font-weight: 400;">데이터 활용 동의 사항 관리를 통한 동의 내역 증명</p>
                                     <ul>
@@ -242,41 +201,10 @@
                     </div>
                 </div>
 
-
-            </div>
-        </div>
-      
-        <div class="wrapper-content contract-zone" id="mv-contract">
-            <div class="form-map" id="map">
-                <div class="container-md contract-area">
-                    <div class="contract-box">
-                        <h3 class="contract-box-title" id="mv-map-1">Contract</h2>
-                        <div class="contract-box-content">
-                            <div class="m-b-sm">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-user-circle" style="width: 18px;"></i>
-                                </span>
-                                <label class="contract-label" id="mv-map-2">주식회사 토브데이터</label>
-                            </div>
-                            <div class="m-b-sm">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-map-o" style="width: 18px;"></i>
-                                </span>
-                                <label class="contract-label" id="mv-map-3">193, Munji-ro, Yuseong-gu, Daejeon, Republic of Korea</label>
-                            </div>
-                            <div class="m-b-none">
-                                <span class="m-r-sm" style="width: 20px; text-align: center;">
-                                    <i class="fa fa-envelope-o " style="width: 18px;"></i>
-                                </span>
-                                <label class="contract-label">contract@tovdata.com</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="page-footer">
+    <div class="page-footer" style="background-color: #ffffff;">
         <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
     </div>
     
@@ -310,13 +238,13 @@
             window.open('https://www.google.com/maps/place/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD+%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%9C%A0%EC%84%B1%EA%B5%AC+%EC%A0%84%EB%AF%BC%EB%8F%99+%EB%AC%B8%EC%A7%80%EB%A1%9C+193/@36.392067,127.398699,17z/data=!4m5!3m4!1s0x356549e5fde31e29:0x65bf2de7ed4fe983!8m2!3d36.3920674!4d127.3986991?hl=ko', "_blank");
         });
         // Click Event
-        document.querySelector('.contract-box #mv-map-1').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-1').addEventListener('click', function() {
             setCenterMap();
         });
-        document.querySelector('.contract-box #mv-map-2').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-2').addEventListener('click', function() {
             setCenterMap();
         });
-        document.querySelector('.contract-box #mv-map-3').addEventListener('click', function() {
+        document.querySelector('.contact-box #mv-map-3').addEventListener('click', function() {
             setCenterMap();
         });
 
