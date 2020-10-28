@@ -31,10 +31,17 @@
         .timeline {
             width: 100%;
         }
+        .timeline-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+        }
         .timeline-item {
+            /*flex-direction: column;*/
             position: relative;
             width: 50%;
         }
+        /*
         .timeline-item::before {
             content: "";
             position: absolute;
@@ -58,28 +65,45 @@
             margin-right: -.0325rem;
             background-color: #C1BCEF;
         }
-        .timeline-item:nth-child(odd) {
+        */
+        .timeline-item:nth-child(even) {
             padding-right: 2.5rem;
             padding-bottom: 2rem;
             text-align: right;
         }
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
+        .timeline-item:nth-child(odd) {
+            /*margin-left: 50%;*/
             padding-left: 2.5rem;
             padding-bottom: 2rem;
             text-align: left;
         }
-        .timeline-item:nth-child(even)::before {
+        .timeline-item:nth-child(odd)::before {
+            content: "";
+            position: absolute;
+            top: 0;
             left: 0;
+            width: 16px;
+            height: 16px;
+            margin-top: .425rem;
             margin-left: -.5rem;
+            border: .0625rem solid #615C8F;
+            border-radius: 50%;
         }
-        .timeline-item:nth-child(even)::after {
+        .timeline-item:nth-child(odd)::after {
+            content: "";
+            position: absolute;
+            top: 0;
             left: 0;
+            bottom: -.1875rem;
+            width: .0625rem;
+            margin-top: 1.675rem;
+            margin-left: -.0325rem;
             background-color: #C1BCEF;
         }
         .timeline-item .timeline-date {
             font-size: 25px;
             font-weight: 600;
+            height: 30px;
             margin-bottom: 7px;
         }
         .timeline-item .timeline-item-content {
@@ -92,9 +116,11 @@
         }
 
         @media (max-width: 768px) {
+            /* 태블릿 */
             .timeline {
                 padding: 0 15px;
             }
+
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 width: 100%;
@@ -104,28 +130,45 @@
                 padding-bottom: 2rem;
                 text-align: left;
             }
+
+            .timeline-item:nth-child(odd) {
+                /* 태블릿에서 상단 timelime-item 세로 길이 조정*/
+                padding-bottom: 0;
+            }
+            
             .timeline-item::before {
+                /*
                 content: "";
                 position: absolute;
                 top: 0;
+                */
                 left: 0;
+                /*
                 width: 16px;
                 height: 16px;
                 margin-top: .425rem;
+                */
                 margin-left: -.5rem;
+                /*
                 border: .0625rem solid #615C8F;
                 border-radius: 50%;
+                */
             }
-            .timeline-item:after {
+            
+            .timeline-item::after {
                 content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
                 bottom: -.1875rem;
                 width: .0625rem;
-                margin-top: 1.675rem;
+                /*margin-top: 1.675rem;*/
                 margin-left: -.0325rem;
                 background-color: #C1BCEF;
+            }
+
+            .timeline-item .timeline-date {
+                height: auto;
             }
         }
     </style>
@@ -133,7 +176,6 @@
 <body>
     <!-- Navbar -->
     <%- include ('./nav') %>
-
     <div class="page-header" id="intro">
         <div class="container">
             <div class="row d-flex">
@@ -148,15 +190,52 @@
         <div class="wrapper-content">
             <div class="container">
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <h3 class="timeline-date">May 2020</h3>
-                        <p class="timeline-item-content">AWS Partnet Network 가입 - Registered Technical Partner</p>
-                        <p class="timeline-item-content">Angel 투자 유치 by 피아몬드 주식회사</p>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item">
+                            <h3 class="timeline-date">Month YYYY</h3>
+                            <p class="timeline-item-content">PC에서 우측, 태블릿에서 상단에 표시합니다.</p>
+                            <p class="timeline-item-content">줄 수가 많아도 이상없이 작동합니다.</p>
+                            <p class="timeline-item-content">이 쪽 timeline-date에 날짜를 적습니다.</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="timeline-date"> </h3>
+                            <p class="timeline-item-content">PC에서 좌측, 태블릿에서 하단에 표시합니다.</p>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <h3 class="timeline-date">Apr 2020</h3>
-                        <p class="timeline-item-content">TOVDATA 설립</p>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item">
+                            <h3 class="timeline-date">May 2020</h3>
+                            <p class="timeline-item-content">AWS Partnet Network 가입 - Registered Technical Partner</p>
+                            <p class="timeline-item-content">Angel 투자 유치 by 피아몬드 주식회사</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="timeline-date"> </h3>
+                            <p class="timeline-item-content">PC에서 좌측, 태블릿에서 하단에 표시합니다.</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                            <p class="timeline-item-content">-</p>
+                        </div>
                     </div>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item">
+                            <h3 class="timeline-date">Apr 2020</h3>
+                            <p class="timeline-item-content">TOVDATA 설립</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="timeline-date"> </h3>
+                            <p class="timeline-item-content"> </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -71,6 +71,10 @@ body {
     display: flex;
     justify-content: center;
 }
+.flex-w-left {
+    display: flex;
+    justify-content: flex-start;
+}
 
 /* Form (basic) */
 .form-b-title {
@@ -92,7 +96,7 @@ body {
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
-
+    margin-bottom: 60px;
 }
 
 /* Image */
