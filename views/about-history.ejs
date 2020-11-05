@@ -37,35 +37,9 @@
             flex-direction: row-reverse;
         }
         .timeline-item {
-            /*flex-direction: column;*/
             position: relative;
             width: 50%;
         }
-        /*
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 16px;
-            height: 16px;
-            margin-top: .425rem;
-            margin-right: -.5rem;
-            border: .0625rem solid #615C8F;
-            border-radius: 50%;
-        }
-        .timeline-item:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: -.1875rem;
-            width: .0625rem;
-            margin-top: 1.675rem;
-            margin-right: -.0325rem;
-            background-color: #C1BCEF;
-        }
-        */
         .timeline-item:nth-child(even) {
             padding-right: 2.5rem;
             padding-bottom: 2rem;
@@ -116,7 +90,6 @@
         }
 
         @media (max-width: 768px) {
-            /* 태블릿 */
             .timeline {
                 padding: 0 15px;
             }
@@ -132,27 +105,12 @@
             }
 
             .timeline-item:nth-child(odd) {
-                /* 태블릿에서 상단 timelime-item 세로 길이 조정*/
                 padding-bottom: 0;
             }
             
             .timeline-item::before {
-                /*
-                content: "";
-                position: absolute;
-                top: 0;
-                */
                 left: 0;
-                /*
-                width: 16px;
-                height: 16px;
-                margin-top: .425rem;
-                */
                 margin-left: -.5rem;
-                /*
-                border: .0625rem solid #615C8F;
-                border-radius: 50%;
-                */
             }
             
             .timeline-item::after {
@@ -170,6 +128,7 @@
             .timeline-item .timeline-date {
                 height: auto;
             }
+
         }
     </style>
 </head>
@@ -190,23 +149,18 @@
         <div class="wrapper-content">
             <div class="container">
                 <div class="timeline">
-                    <div class="timeline-wrapper">
-                        <div class="timeline-item">
-                            <h3 class="timeline-date">Month YYYY</h3>
-                            <p class="timeline-item-content">PC에서 우측, 태블릿에서 상단에 표시합니다.</p>
-                            <p class="timeline-item-content">줄 수가 많아도 이상없이 작동합니다.</p>
-                            <p class="timeline-item-content">이 쪽 timeline-date에 날짜를 적습니다.</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
+                    <!--
+                        <div class="timeline-wrapper">
+                            <div class="timeline-item">
+                                <h3 class="timeline-date">Month YYYY</h3>
+                                <p class="timeline-item-content"> contents right side </p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3 class="timeline-date"> </h3>
+                                <p class="timeline-item-content"> contents left side</p>
+                            </div>
                         </div>
-                        <div class="timeline-item">
-                            <h3 class="timeline-date"> </h3>
-                            <p class="timeline-item-content">PC에서 좌측, 태블릿에서 하단에 표시합니다.</p>
-                        </div>
-                    </div>
+                    -->
                     <div class="timeline-wrapper">
                         <div class="timeline-item">
                             <h3 class="timeline-date">May 2020</h3>
@@ -214,15 +168,8 @@
                             <p class="timeline-item-content">Angel 투자 유치 by 피아몬드 주식회사</p>
                         </div>
                         <div class="timeline-item">
-                            <h3 class="timeline-date"> </h3>
-                            <p class="timeline-item-content">PC에서 좌측, 태블릿에서 하단에 표시합니다.</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
-                            <p class="timeline-item-content">-</p>
+                            <h3 class="timeline-date"></h3>
+                            <p class="timeline-item-content"></p>
                         </div>
                     </div>
                     <div class="timeline-wrapper">
@@ -231,8 +178,8 @@
                             <p class="timeline-item-content">TOVDATA 설립</p>
                         </div>
                         <div class="timeline-item">
-                            <h3 class="timeline-date"> </h3>
-                            <p class="timeline-item-content"> </p>
+                            <h3 class="timeline-date"></h3>
+                            <p class="timeline-item-content"></p>
                         </div>
                     </div>
 
