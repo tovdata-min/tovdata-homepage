@@ -74,183 +74,227 @@
             font-size: 13px;
             font-weight: 400;
             color: #aaaaaa;
-        } */
-        .member-card {
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
-            cursor: pointer;
-            margin: 0 15px;
-        }
-        .member-card .member-info {
-            background-color: #FFFFFF;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            padding: 25px 15px 20px 15px;
-            text-align: center;
-        }
-        .member-card .member-info h5 {
-            font-weight: 700;
-            margin-bottom: 5px;
-            font-size: 18px;
-            color: #222222;
-        }
-        .member-card .member-info span {
-            display: block;
-            font-size: 13px;
-            font-weight: 400;
-            color: #AAAAAA;
-        }
-        .member-card .hr-member-info-dashed {
-            margin: 0 30px;
-            border-top: 1px dashed #CDCDCD;
-        }
-        .member-card .member-career {
-            background-color: #FFFFFF;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            padding: 20px 15px 25px 15px;
-        }
-        .member-card .member-career p {
-            color: #656565;
-            font-size: 14px;
-            font-weight: 300;
-            margin-bottom: 8px;
-            padding: 0 30px;
-        }
-        .member-card .member-career p > i {
-            float: left;
-            margin-right: 8px;
-        }
-        .member-card .member-career .career-label {
-            display: block;
-            margin-left: 19px;
-        }
-        .sg-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
-            cursor: pointer;
-            margin: 0 15px;
-            padding: 25px 35px;
-        }
-        @media(max-width: 768px) {
+            } */
+            .col-md-4 {
+                justify-content: center;
+            }
             .member-card {
-                margin: 0 15px 30px 10px !important;
+                border-radius: 10px;
+                box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
+                cursor: pointer;
+                max-width: fit-content;
+                margin: 0 15px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 15px;
+                padding-right:15px;
+
+            }
+            .member-card .member-info {
+                background-color: #FFFFFF;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding: 25px 15px 20px 15px;
+                text-align: center;
+            }
+            .member-card .member-info h5 {
+                font-weight: 700;
+                margin-bottom: 5px;
+                font-size: 18px;
+                color: #222222;
+            }
+            .member-card .member-info span {
+                display: block;
+                font-size: 13px;
+                font-weight: 400;
+                color: #AAAAAA;
+            }
+            .member-card .hr-member-info-dashed {
+                margin: 0 30px;
+                border-top: 1px dashed #CDCDCD;
+            }
+            .member-card .member-career {
+                background-color: #FFFFFF;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 20px 15px 25px 15px;
+            }
+            .member-card .member-career p {
+                color: #656565;
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 8px;
+                padding: 0 30px;
+            }
+            .member-card .member-career p > i {
+                float: left;
+                margin-right: 8px;
+            }
+            .member-card .member-career .career-label {
+                display: block;
+                margin-left: 19px;
+            }
+            .member-card .member-image {
+                height: auto;
+                max-width: 90%;
             }
             .sg-card {
-                margin: 0 15px 30px 10px !important;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 6px 18px rgba(120, 120, 120, 0.2);
+                cursor: pointer;
+                margin: 0 15px;
+                padding: 25px 35px;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navbar -->
-    <%- include ('./nav') %>
+            @media(max-width: 768px) {
+                .member-card {
+                    margin: 0 15px 30px 10px !important;
+                }
+                .sg-card {
+                    margin: 0 15px 30px 10px !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <%- include ('./nav') %>
 
-    <div class="page-header" id="intro">
-        <div class="container">
-            <div class="row d-flex">
-                <div class="col-lg-6">
-                    <h2 class="page-title">Team</b></h2>
+        <div class="page-header" id="intro">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-6">
+                        <h2 class="page-title">Team</b></h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="page-body">
-        <div class="wrapper-content">
-            <div class="container">
-                <div class="form-b">
-                    <div class="form-b-title">
-                        <h3>Members</h3>
+        <div class="page-body">
+            <div class="wrapper-content">
+                <div class="container">
+                    <div class="form-b">
+                        <div class="form-b-title">
+                            <h3>Members</h3>
+                        </div>
+                        <div class="form-b-content flex-w-center">
+                            <div class="col-md-4 flex-w-center">
+                                <div class="member-card flex-w-center">
+                                    <img class="member-image" src="images/team/member(hyojin_park-mono).png">
+                                </div>
+                            </div>
+                            <div class="col-md-4 flex-w-center">
+                                <div class="member-card flex-w-center">
+                                    <img class="member-image" src="images/team/member(sungkwan_jung-mono).png">
+                                </div>
+                            </div>
+                            <div class="col-md-4 flex-w-center">
+                                <div class="member-card flex-w-center">
+                                    <img class="member-image" src="images/team/member(suzy_jeon-mono).png">
+                                </div>
+                            </div>
+                            <!--<div class="col-md-4">
+                                <div class="member-card">
+                                    <div class="member-img">
+                                        <img class="image-w-max" src="images/team/member(hyojin_park).png" />
+                                        <div class="member-career">
+                                            <b>Career</b><br/>
+                                            kaist<br/>
+                                            <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>hjpark@tovdata.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <h5>Hyojin Park</h5>
+                                        <span>CEO/Compliance Expert</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="member-card">
+                                    <div class="member-img">
+                                        <img class="image-w-max" src="images/team/member(sungkwan_jung).png" />
+                                        <div class="member-career">
+                                            <b>Career</b><br/>
+                                            kaist<br/>
+                                            <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>skjung@tovdata.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <h5>Sungkwan Jung</h5>
+                                        <span>CTO/Solution Architecture</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="member-card">
+                                    <div class="member-img">
+                                        <img class="image-w-max" src="images/team/member(suzy_jeon).png" />
+                                        <div class="member-career">
+                                            <b>Career</b><br/>
+                                            kaist<br/>
+                                            <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>suzy@tovdata.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <h5>Suzy Jeon</h5>
+                                        <span>Head of Marketing</span>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
                     </div>
                     <div class="form-b-content flex-w-center">
+                        <div class="col-md-4 flex-w-center">
+                            <div class="member-card flex-w-center">
+                                <img class="member-image" src="images/team/member(kyuyoung_jeon-mono).png">
+                            </div>
+                        </div>
+                        <div class="col-md-4 flex-w-center">
+                            <div class="member-card flex-w-center">
+                                <img class="member-image" src="images/team/member(jaewon_kim-mono).png">
+                            </div>
+                        </div>
+                        <!-- 1st member card
                         <div class="col-md-4">
                             <div class="member-card">
                                 <div class="member-info">
-                                    <h5>Hyojin Park</h5>
-                                    <span>CEO / Compliance Export</span>
+                                    <h5>name</h5>
+                                    <span>title</span>
                                 </div>
                                 <div class="hr-member-info-dashed"></div>
                                 <div class="member-career">
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">IoT Research Development Award Winner of Ministry of Science and ICT</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Technology Commercialization Competition Award Winner of National Research Foundation of Korea President</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- 2nd member card
                         <div class="col-md-4">
                             <div class="member-card">
                                 <div class="member-info">
-                                    <h5>Sungkwan Jung</h5>
-                                    <span>CEO / Compliance Export</span>
+                                    <h5>name</h5>
+                                    <span>title</span>
                                 </div>
                                 <div class="hr-member-info-dashed"></div>
                                 <div class="member-career">
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Team Leader and Founding Member(@KAIST ITC, 12yr)</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Research professor(@KAIST ITC)</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- 3rd member card
                         <div class="col-md-4">
                             <div class="member-card">
                                 <div class="member-info">
-                                    <h5>Suzy Jeon</h5>
-                                    <span>Head of Marketing & Account</span>
+                                    <h5>name</h5>
+                                    <span>title</span>
                                 </div>
                                 <div class="hr-member-info-dashed"></div>
                                 <div class="member-career">
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Ph.D Candidate(@KAIST EE)</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Research Management(@ KAIST ITC, 8yr)</span></p>
-                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">Adjunct professor(@Chungnam National Univ. Business School)</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/team/member(hyojin_park).png" />
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>hjpark@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Hyojin Park</h5>
-                                    <span>CEO/Compliance Expert</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/team/member(sungkwan_jung).png" />
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>skjung@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Sungkwan Jung</h5>
-                                    <span>CTO/Solution Architecture</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="member-card">
-                                <div class="member-img">
-                                    <img class="image-w-max" src="images/team/member(suzy_jeon).png" />
-                                    <div class="member-career">
-                                        <b>Career</b><br/>
-                                        kaist<br/>
-                                        <span class="m-r-sm" style="font-size: 11px;"><i class="fa fa-envelope-o " style="width: 18px;"></i>suzy@tovdata.com</span>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5>Suzy Jeon</h5>
-                                    <span>Head of Marketing</span>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
+                                    <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
                                 </div>
                             </div>
                         </div> -->
@@ -298,6 +342,6 @@
     <!-- Public Function -->
     <script src="/javascripts/public-function.js"></script>
     <script>
-        
+
     </script>
 </body>
