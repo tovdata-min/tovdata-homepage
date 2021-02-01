@@ -74,7 +74,7 @@
             font-size: 13px;
             font-weight: 400;
             color: #aaaaaa;
-            } */
+            } *//*
             .col-md-4 {
                 justify-content: center;
             }
@@ -153,6 +153,49 @@
                 .sg-card {
                     margin: 0 15px 30px 10px !important;
                 }
+            }*/
+
+            .row-title {
+                font-size: 1.8rem;
+                font-weight: 800;
+                margin-bottom: 2.375rem;
+                text-align: center;
+            }
+            .member-card {
+                border: 1px solid #E7EAEC;
+                height: calc(100% - 1.75rem);
+                margin-bottom: 1.75rem;
+                padding: 1.75rem 1.5rem 1.25rem 1.5rem;
+                position: relative;
+                user-select: none;
+            }
+            .member-img {
+                border: 1px solid mediumslateblue;
+                border-radius: 50%;
+                margin: 0 auto 1.25rem auto;
+                height: 9.5rem;
+                width: 9.5rem;
+            }
+            .member-name {
+                color: #606263;
+                font-size: 20px;
+                font-weight: 800;
+                margin-bottom: 0.75rem;
+                text-align: center;
+            }
+            .member-name > strong {
+                color: #8D73D9;
+                font-size: 17px;
+            }
+            .member-info {
+                font-size: 14px;
+                text-align: center;
+            }
+            .member-career > p {
+                margin-bottom: 0.4rem;
+            }
+            .member-career > p:last-child {
+                margin-bottom: 0;
             }
         </style>
     </head>
@@ -171,6 +214,88 @@
         </div>
         <div class="page-body">
             <div class="wrapper-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="row-title">Members</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">박효진 <strong>CEO</strong></h5>
+                                            <div class="member-career">
+                                                <p>KAIST 정보통신공학부 박사</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">정성관 <strong>CTO</strong></h5>
+                                            <div class="member-career">
+                                                <p>KAIST 전기 및 전자공학 박사</p>
+                                                <p>前) KAIST IT융합연구소 지능화기술연구팀 팀장</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">전수지 <strong>CMO</strong></h5>
+                                            <div class="member-career">
+                                                <p>충남대학교 경영학과 박사</p>
+                                                <p>前) KAIST IT융합연구소 지능화기술연구팀 연구원</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">전규영 <strong>Senior Developer</strong></h5>
+                                            <div class="member-career">
+                                                <p>성균관대학교 전자전기컴퓨터공학 석사</p>
+                                                <p>前) SKT SW Engineer</p>
+                                                <p>前) LG전자 SW Engineer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">박해민 <strong>Developer</strong></h5>
+                                            <div class="member-career">
+                                                <p>前) KAIST IT융합연구소 지능화기술연구팀 연구원</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="member-card shadow-sm rounded">
+                                        <div class="member-img"></div>
+                                        <div class="member-info">
+                                            <h5 class="member-name">정재은 <strong>Designer</strong></h5>
+                                            <div class="member-career">
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--
                 <div class="container">
                     <div class="form-b">
                         <div class="form-b-title">
@@ -239,7 +364,7 @@
                                         <span>Head of Marketing</span>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                     <div class="form-b-content flex-w-center">
@@ -297,37 +422,35 @@
                                     <p><i class="ion-ios-ribbon"></i><span class="career-label">career-history</span></p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
+                    </div>
+                </div>
+-->
+            </div>
+            <div class="wrapper-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="row-title">Seed Groups</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card-sg">
+                                        <img class="image-w-max" src="images/team/seed_group_1.png" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card-sg">
+                                        <img class="image-w-max" src="images/team/seed_group_2.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="wrapper-content">
-            <div class="container">
-                <div class="form-b">
-                    <div class="form-b-title">
-                        <h3>Seed Groups</h3>
-                    </div>
-                    <div class="form-b-content flex-w-center">
-                        <div class="col-md-4">
-                            <div class="sg-card">
-                                <div class="sg-img">
-                                    <img class="image-w-max" src="images/team/seed_group_1.png" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="sg-card">
-                                <div class="sg-img">
-                                    <img class="image-w-max" src="images/team/seed_group_2.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
     </div>
     <div class="page-footer">
         <div class="container" style="font-size: 13px; font-weight: 200; text-align: center;">Copyright © TOVDATA Inc. All rights reserved</div>
