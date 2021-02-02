@@ -23,6 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/members", express.static(path.join(__dirname, "public/images/team/members")));
 
 // Routes setup
 app.use('/', indexRouter);

@@ -162,34 +162,45 @@
                 text-align: center;
             }
             .member-card {
-                border: 1px solid #E7EAEC;
+                border: 1px solid rgba(124, 104, 238, 0.12);
                 height: calc(100% - 1.75rem);
                 margin-bottom: 1.75rem;
                 padding: 1.75rem 1.5rem 1.25rem 1.5rem;
                 position: relative;
                 user-select: none;
             }
-            .member-img {
-                border: 1px solid mediumslateblue;
+            .member-image {
                 border-radius: 50%;
-                margin: 0 auto 1.25rem auto;
-                height: 9.5rem;
-                width: 9.5rem;
+                display: block;
+                -webkit-filter: grayscale(100%);
+                filter: gray;
+                margin: 0 auto 0.875rem auto;
+                height: 12rem;
+                transition: filter 0.45s, -webkit-filter 0.45s, transform 0.45s;
+                width: 12rem;
+            }
+            .member-image:hover {
+                -webkit-filter: grayscale(0%);
+                filter: none;
+                transform: scale(1.05);
             }
             .member-name {
-                color: #606263;
-                font-size: 20px;
+                color: #48494A;
+                font-size: 21px;
                 font-weight: 800;
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.45rem;
                 text-align: center;
             }
             .member-name > strong {
                 color: #8D73D9;
-                font-size: 17px;
+                font-size: 18px;
             }
             .member-info {
                 font-size: 14px;
                 text-align: center;
+            }
+            .member-career {
+                display: none;
             }
             .member-career > p {
                 margin-bottom: 0.4rem;
@@ -223,9 +234,10 @@
                             <div class="row justify-content-center">
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/ellie.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">박효진 <strong>CEO</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">ellie@tovdata.com</p>
                                             <div class="member-career">
                                                 <p>KAIST 정보통신공학부 박사</p>
                                             </div>
@@ -234,9 +246,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/tim.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">정성관 <strong>CTO</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">tim@tovdata.com</p>
                                             <div class="member-career">
                                                 <p>KAIST 전기 및 전자공학 박사</p>
                                                 <p>前) KAIST IT융합연구소 지능화기술연구팀 팀장</p>
@@ -246,9 +259,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/suzy.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">전수지 <strong>CMO</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">suzy@tovdata.com</p>
                                             <div class="member-career">
                                                 <p>충남대학교 경영학과 박사</p>
                                                 <p>前) KAIST IT융합연구소 지능화기술연구팀 연구원</p>
@@ -258,9 +272,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/leo.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">전규영 <strong>Senior Developer</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">leo@tovdata.com</p>
                                             <div class="member-career">
                                                 <p>성균관대학교 전자전기컴퓨터공학 석사</p>
                                                 <p>前) SKT SW Engineer</p>
@@ -271,9 +286,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/min.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">박해민 <strong>Developer</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">min@tovdata.com</p>
                                             <div class="member-career">
                                                 <p>前) KAIST IT융합연구소 지능화기술연구팀 연구원</p>
                                             </div>
@@ -282,9 +298,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="member-card shadow-sm rounded">
-                                        <div class="member-img"></div>
+                                        <img class="member-image" src="/members/jenny.png"></img>
                                         <div class="member-info">
                                             <h5 class="member-name">정재은 <strong>Designer</strong></h5>
+                                            <p style="color: #ADADAD; margin-bottom: 0.5rem;">jenny@tovdata.com</p>
                                             <div class="member-career">
                                                 <p></p>
                                             </div>
